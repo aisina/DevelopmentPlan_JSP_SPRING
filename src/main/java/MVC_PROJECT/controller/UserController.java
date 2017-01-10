@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ import java.io.IOException;
  * Created by innopolis on 05.01.2017.
  */
 @Controller
+@SessionAttributes("user")
 public class UserController {
 
     UserService userService = new UserService();
@@ -29,9 +31,9 @@ public class UserController {
 
 
     @RequestMapping(value = "/changePassAndLogin", method = RequestMethod.POST)
-    public ModelAndView changePassAndLogin(@ModelAttribute("authorizedUser") User user, HttpSession session){
-       // ModelAndView mav = userService.changeLogAndPass(user);
-        ModelAndView mav = userService.changeLogAndPassWithSession(session, user);
+    public ModelAndView changePassAndLogin(@ModelAttribute User user){
+        //в ModelAttribute User user используются данные из HttpSerssion сессии
+        ModelAndView mav = userService.changeLogAndPass(user);
         return mav;
     }
 

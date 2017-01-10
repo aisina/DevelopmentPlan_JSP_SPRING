@@ -3,14 +3,18 @@ package MVC_PROJECT.controller;
 import MVC_PROJECT.model.User;
 import MVC_PROJECT.model.dao.AbstractDAO;
 import MVC_PROJECT.model.dao.UserListDAO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
@@ -27,18 +31,22 @@ public class AuthorizationController {
     public GeneratePassword userLogonController = new GeneratePassword();
     public static AbstractDAO userDAO = new UserListDAO();
     private static final Map<String, User> users = userDAO.getAll();
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuthorizationController.class);
+
 
 
     //кнопка "Выйти"
     @RequestMapping(value = "/userLogout")
-    public ModelAndView Logout(HttpServletRequest req) throws IOException {
+    public ModelAndView Logout(HttpServletRequest req, SessionStatus status) throws IOException {
 
         HttpServletRequest httpRequest = (HttpServletRequest) req;
         HttpSession session = httpRequest.getSession(false);
 
-        session.setAttribute("logged", null);
+        session.setAttribute("user", null);
         session.setAttribute("username", null);
         session.setAttribute("id", null);
+
+        status.setComplete(); //очищает Spring овскую session
 
         return new ModelAndView("login", "userCommandName", new User());
     }
@@ -68,7 +76,7 @@ public class AuthorizationController {
         } else {
 
             HttpSession session = req.getSession();
-            session.setAttribute("logged", user);
+            session.setAttribute("user", user);
             session.setAttribute("username", user.getUsername());
             session.setAttribute("id", user.getId());
 

@@ -79,7 +79,7 @@ public class UserListDAO extends AbstractDAO<User,String> {
                 sqlQuery += "password='" + GeneratePassword.generatePass(user.getPassword(), user) + "', login = '" + user.getUsername() +"' ";
             }
 
-            System.out.println(sqlQuery);
+            sqlQuery += "where id="+id;
 
             stmt.executeUpdate(sqlQuery);
             return true;

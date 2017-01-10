@@ -22,7 +22,7 @@
 <h2>Здравствуйте, ${username}!</h2>
 <p><form action="/userLogout"><input type="submit" value="Выйти" /></form></p>
 
-<p><form:form action="/showChangePassAndLoginView" commandName="authorizedUser" method="get">
+<p><form:form action="/showChangePassAndLoginView" modelAttribute="authorizedUser" method="get">
     <input type="submit" value="Изменить логин и пароль" />
 </form:form></p>
 

@@ -23,7 +23,7 @@ public class UserService {
         String password = user.getPassword();
         String password2 = user.getConfirmPassword();
 
-        System.out.println(login + " " + login2 + " " + password + " " + password2);
+        System.out.println("UserService; id=" + user.getId() + " new login=" + login + " " + login2 + " new pass=" + password + " " + password2);
 
         if(! login.equals(login2))
             mav.setViewName("loginChangedError");
@@ -33,11 +33,9 @@ public class UserService {
                 mav.setViewName("loginChangedError");
             }
             else{
-                System.out.println("Все нормально, меняем данные");
 
                 boolean bool = userDAO.update(user);
                 if(bool){
-                    System.out.println("TRUE");
                     mav.setViewName("loginChangedSuccess");
                 }else{
                     mav.setViewName("loginChangedError");
@@ -48,7 +46,7 @@ public class UserService {
     }
 
 
-    public ModelAndView changeLogAndPassWithSession(HttpSession session, User user){
+   /* public ModelAndView changeLogAndPassWithSession(HttpSession session, User user){
 
         System.out.println("Изменение логина и пароля " + (String) session.getAttribute("id") + " " + user.getUsername() + " " + user.getConfirmUsername());
 
@@ -85,7 +83,7 @@ public class UserService {
             }
         }
         return mav;
-    }
+    }*/
 
 
 

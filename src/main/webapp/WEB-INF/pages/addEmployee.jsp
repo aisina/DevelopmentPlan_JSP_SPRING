@@ -15,7 +15,9 @@
 
 <%--<form action="<%= request.getContextPath()%>/addEmployee" method="post">--%>
 <%--<form action="/addEmployee" method="POST"> тоже работает--%>
-<form:form action="/addEmployee" method="POST" commandName="addNewEmployee">
+
+<%--commandName устарело. Использовать modelAttribute--%>
+<form:form action="/addEmployee" method="POST" modelAttribute="addNewEmployee">
     <table>
         <tr>
             <td><form:label path="name">ФИО</form:label></td>

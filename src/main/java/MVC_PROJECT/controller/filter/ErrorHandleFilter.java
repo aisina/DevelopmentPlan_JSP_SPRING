@@ -48,7 +48,7 @@ public class ErrorHandleFilter implements Filter{
 
         String query = httpRequest.getRequestURI();
 
-        if ((session == null || session.getAttribute("logged") == null))
+        if ((session == null || session.getAttribute("user") == null))
                 /*&& !query.matches("/public/.*(.css|.js|.png|.jpg|.jsp)")*/
         //&& whiteList.contains(query))
         {

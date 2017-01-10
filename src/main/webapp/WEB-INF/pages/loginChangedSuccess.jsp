@@ -13,7 +13,7 @@
 </head>
 <body>
 Данные успешно изменены.
-<p><form:form action="/userPage" commandName="authorizedUser">
+<p><form:form action="/userPage" modelAttribute="authorizedUser">
     <input type="submit" value="На главную"/>
 </form:form></p>
 

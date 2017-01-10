@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<form:form action="/changePassAndLogin" commandName="authorizedUser" method="POST">
+<form:form action="/changePassAndLogin" modelAttribute="authorizedUser" method="POST">
 <table>
     <tr>
         <td><form:label path="username">Новый логин:</form:label></td>

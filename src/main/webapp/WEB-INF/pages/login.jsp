@@ -14,9 +14,9 @@
 <body>
 
 <%--spring овская форма умеет работать с моделями, которые передаем из контроллера--%>
-<form:form method="POST" commandName="userCommandName" action="/userLogon">
+<form:form method="POST" modelAttribute="userCommandName" action="/userLogon">
 
-    <%--в форму передали объект User при помощи commandName. path должны азываться также, как и поля класса User--%>
+    <%--в форму передали объект User при помощи commandName. path должны называться также, как и поля класса User--%>
     <form:label path="username">Логин:</form:label>
     <form:input path="username" />
 

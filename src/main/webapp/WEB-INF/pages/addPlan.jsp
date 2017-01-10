@@ -19,7 +19,7 @@
 
 <p><a href="/">На главную</a></p>
 
-<form:form action="/addPlan" method="POST" commandName="addNewPlan">
+<form:form action="/addPlan" method="POST" modelAttribute="addNewPlan">
     <table>
         <tr>
             <td><form:label path="year">Год</form:label></td>
