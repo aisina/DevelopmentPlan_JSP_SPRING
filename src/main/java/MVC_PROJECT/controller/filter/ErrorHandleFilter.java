@@ -12,7 +12,8 @@ import java.util.Set;
 /**
  * Created by innopolis on 09.01.2017.
  */
-@WebFilter(urlPatterns = {"/addEmployee", "/showEmployeeList", "/deleteEmployee", "/showPlan", "/addPlan", "/userPlanView"})
+@WebFilter(urlPatterns = {"/addEmployee", "/showEmployeeList", "/deleteEmployee", "/showPlan", "/addPlan",
+        "/userPlanView", "/showChangePassAndLoginView", "/changePassAndLogin", "/userPage"})
 //@WebFilter(urlPatterns = {"/addEmployee"})
 public class ErrorHandleFilter implements Filter{
 
@@ -28,6 +29,9 @@ public class ErrorHandleFilter implements Filter{
         adminList.add("/showPlan");
         adminList.add("/addPlan");
 
+        userList.add("/showChangePassAndLoginView");
+        userList.add("/changePassAndLogin");
+        userList.add("/userPage");
         userList.add("/userPlanView");
     }
 
