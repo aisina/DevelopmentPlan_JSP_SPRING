@@ -3,8 +3,10 @@ package MVC_PROJECT.model.dao;
 import MVC_PROJECT.controller.GeneratePassword;
 import MVC_PROJECT.model.User;
 import MVC_PROJECT.controller.db.DatabaseConnection;
+import MVC_PROJECT.model.exceptions.UserDAOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,12 +19,13 @@ import java.util.Map;
 /**
  * Created by innopolis on 03.01.2017.
  */
-public class UserListDAO extends AbstractDAO<User,String> {
+@Repository
+public class UserListDAO extends AbstractUserListDAO<User,String> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserListDAO.class);
 
     @Override
-    public Map<String, User> getAll() {
+    public Map<String, User> getAll() throws UserDAOException {
         try(Connection connection = DatabaseConnection.getConnection();
             Statement stmt = connection.createStatement();) {
 
@@ -40,22 +43,22 @@ public class UserListDAO extends AbstractDAO<User,String> {
 
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
-            return null;
+            throw new UserDAOException();
         }
     }
 
     @Override
-    public List<User> getAllList() {
+    public List<User> getAllList() throws UserDAOException{
         return null;
     }
 
     @Override
-    public User getEntityById(String key) {
+    public User getEntityById(String key) throws UserDAOException{
         return null;
     }
 
     @Override
-    public boolean update(User user) {
+    public boolean update(User user) throws UserDAOException{
         Connection connection = DatabaseConnection.getConnection();
         try {
             String id = user.getId();
@@ -85,23 +88,23 @@ public class UserListDAO extends AbstractDAO<User,String> {
             return true;
 
         } catch (SQLException e) {
-            //LOGGER.info(e.getMessage());
-            return false;
+            LOGGER.warn(e.getMessage());
+            throw new UserDAOException();
         }
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(String id) throws UserDAOException{
         return false;
     }
 
     @Override
-    public String create(User entity) {
+    public String create(User entity) throws UserDAOException{
         return null;
     }
 
     @Override
-    public String getNextNewId() {
+    public String getNextNewId() throws UserDAOException{
         return null;
     }
 }

@@ -16,7 +16,6 @@
 <h2>Здравствуйте, ${username}!</h2>
 
 <p><a href="/userLogout">Выйти</a></p>
-<%--<p><a href="/showEmployeeList">Просмотр списка сотрудников</a></p>--%>
 <p><form action="/showEmployeeList" method="get">
     <input type="submit" value="Просмотр сотрудников">
 </form></p>

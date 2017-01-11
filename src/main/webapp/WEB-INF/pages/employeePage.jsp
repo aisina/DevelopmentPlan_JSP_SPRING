@@ -16,20 +16,12 @@
 </head>
 <body>
 
-<%--<jsp:useBean id="employeePlanList" class="innopolisProject.dao.PlanDAO" scope="page"/>--%>
-
-<%--<h2>Здравствуйте, ${authorizedUser.username}!</h2>--%>
 <h2>Здравствуйте, ${username}!</h2>
 <p><form action="/userLogout"><input type="submit" value="Выйти" /></form></p>
 
 <p><form:form action="/showChangePassAndLoginView" modelAttribute="authorizedUser" method="get">
     <input type="submit" value="Изменить логин и пароль" />
 </form:form></p>
-
-
-<%--<%request.setCharacterEncoding("UTF-8");%>
-<%= "Здравствуйте, " + request.getParameter("username") + "!" %>
-<%--${param["username"]} &lt;%&ndash;EL&ndash;%&gt;--%>
 
 <table border="1">
     <tr>

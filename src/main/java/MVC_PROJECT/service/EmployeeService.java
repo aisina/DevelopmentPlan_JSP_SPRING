@@ -1,59 +1,60 @@
 package MVC_PROJECT.service;
 
 import MVC_PROJECT.model.Employee;
-import MVC_PROJECT.model.dao.AbstractDAO;
-import MVC_PROJECT.model.dao.EmployeeListDAO;
-import org.springframework.web.servlet.ModelAndView;
+import MVC_PROJECT.model.dao.AbstractEmployeeListDAO;
+import MVC_PROJECT.model.exceptions.EmployeeDAOException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by innopolis on 09.01.2017.
  */
-public class EmployeeService {
 
-    AbstractDAO emplDAO = new EmployeeListDAO();
+@Service
+public class EmployeeService implements IEmployeeService{
 
-    public ModelAndView addEmployee(Employee employee){
-        ModelAndView mav = new ModelAndView();
+    private final AbstractEmployeeListDAO emplDAO;
+
+    @Autowired
+    public EmployeeService(AbstractEmployeeListDAO emplDAO) {
+        this.emplDAO = emplDAO;
+    }
+
+    @Override
+    public boolean addEmployee(Employee employee) throws EmployeeDAOException {
+        boolean bool = true;
         //случай, когда поля для ввода пусты
         if("".equals(employee.getName()) || "".equals(employee.getPosition()) || "".equals(employee.getDepartment()) || "".equals(employee.getEmail())){
-            mav.addObject("employeeList", emplDAO.getAllList());
-            //без ссобщения
-            mav.setViewName("addEmployee");
+            bool = false;
         }else {
             String ids = "";
             ids = emplDAO.create(employee);
-            if (!"".equals(ids)) {
-                mav.addObject("employeeList", emplDAO.getAllList());
-                mav.setViewName("employeeList");
-            } else {
-                mav.setViewName("employeeList"); //по сути, здесь должна быть страница ошибки
+            if ("".equals(ids)) {
+                bool = false;
             }
-
         }
-        return mav;
+        return bool;
     }
 
-    public String getNextNewId(){
+    @Override
+    public String getNextNewId() throws EmployeeDAOException {
         return emplDAO.getNextNewId();
     }
 
-
-    public ModelAndView deleteEmployee(String id){
+    @Override
+    public List<Employee> deleteEmployee(String id) throws EmployeeDAOException {
         boolean bool = emplDAO.delete(id);
-        ModelAndView mav = new ModelAndView();
         if(bool){
-            mav.addObject("employeeList", emplDAO.getAllList());
-            mav.setViewName("employeeList");
+            return emplDAO.getAllList();
         }else{
-            mav.setViewName("employeeList"); //по сути, здесь должна быть страница ошибки
+            return null;
         }
-        return mav;
     }
 
-    public ModelAndView showEmplList(){
-        ModelAndView mav = new ModelAndView();
-        mav.setViewName("employeeList");
-        mav.addObject("employeeList", emplDAO.getAllList());
-        return mav;
+    @Override
+    public List<Employee> showEmplList() throws EmployeeDAOException {
+        return emplDAO.getAllList();
     }
 }

@@ -2,9 +2,9 @@ package MVC_PROJECT.controller;
 
 import MVC_PROJECT.model.Employee;
 import MVC_PROJECT.controller.mail.MailSender;
-import MVC_PROJECT.model.dao.AbstractDAO;
-import MVC_PROJECT.model.dao.EmployeeListDAO;
-import MVC_PROJECT.service.EmployeeService;
+import MVC_PROJECT.model.exceptions.EmployeeDAOException;
+import MVC_PROJECT.service.IEmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,11 +17,16 @@ import javax.servlet.http.HttpServletRequest;
  * Created by innopolis on 05.01.2017.
  */
 
-//add. delete. select and etc.
 @Controller
 public class EmployeeController {
 
-    EmployeeService emplService = new EmployeeService();
+    private final IEmployeeService emplService;
+
+    @Autowired
+    public EmployeeController(IEmployeeService emplService) {
+        this.emplService = emplService;
+    }
+
 
     @RequestMapping(value = {"/addEmployee"}, method = RequestMethod.GET)
     public ModelAndView showAddEmployeePage() {
@@ -29,22 +34,41 @@ public class EmployeeController {
     }
 
 
-    //Аннотацией @RequestMapping(value = "/simple1") сообщаем,
-    //что данный контроллер будет обрабатывать запрос, URI которого "/simple1"
     @RequestMapping(value = {"/addEmployee"}, method = RequestMethod.POST)
     public ModelAndView addEmployee(@ModelAttribute("addNewEmployee") Employee myEmployee){
 
-        ModelAndView mav = emplService.addEmployee(myEmployee);
-        String ids = emplService.getNextNewId();
+        ModelAndView mav = new ModelAndView();
+        boolean bool = false;
+        try{
+            bool = emplService.addEmployee(myEmployee);
 
-        String message = "Здравствуйте, " + myEmployee.getName() + "! \n";
-        message += "Вам предоставлен доступ к системе профессионального развития сотрудников компании. \n";
-        message += "Данные для входа в личный кабинет:\n";
-        message += "Логин: " + ids + "\n";
-        message += "Пароль: " + ids + "\n";
-        message += "Вы можете изменить данные в личном кабинете.";
-        String subject = "Вам предоставлен доступ к системе профразвития сотрудников.";
-        MailSender.sendMail(message, subject, myEmployee.getEmail());
+            if(bool) {
+                try {
+                    mav.addObject("employeeList", emplService.showEmplList());
+                    mav.setViewName("employeeList");
+
+                    String ids = emplService.getNextNewId();
+
+                    String message = "Здравствуйте, " + myEmployee.getName() + "! \n";
+                    message += "Вам предоставлен доступ к системе профессионального развития сотрудников компании. \n";
+                    message += "Данные для входа в личный кабинет:\n";
+                    message += "Логин: " + ids + "\n";
+                    message += "Пароль: " + ids + "\n";
+                    message += "Вы можете изменить данные в личном кабинете.";
+                    String subject = "Вам предоставлен доступ к системе профразвития сотрудников.";
+                    MailSender.sendMail(message, subject, myEmployee.getEmail());
+                }
+                catch(EmployeeDAOException e){
+                    mav.setViewName("employeeList");
+                }
+            }
+            else{
+                mav.setViewName("addEmployee");
+            }
+
+        }catch(EmployeeDAOException e){
+            mav.setViewName("employeeList");
+        }
 
         return mav;
     }
@@ -52,12 +76,27 @@ public class EmployeeController {
 
     @RequestMapping(value = "/showEmployeeList", method = RequestMethod.GET)
     public ModelAndView showEmplList(){
-        return emplService.showEmplList();
+        ModelAndView mav = new ModelAndView();
+        try {
+            mav.addObject("employeeList", emplService.showEmplList());
+            mav.setViewName("employeeList");
+        } catch (EmployeeDAOException e) {
+            mav.setViewName("errorPage");
+        }
+        return mav;
     }
 
 
     @RequestMapping(value = "/deleteEmployee")
     public ModelAndView deleteEmployee(HttpServletRequest request){
-        return emplService.deleteEmployee(request.getParameter("employeeID"));
+        ModelAndView mav = new ModelAndView();
+        try {
+            mav.addObject("employeeList", emplService.deleteEmployee(request.getParameter("employeeID")));
+            mav.setViewName("employeeList");
+        } catch (EmployeeDAOException e) {
+            mav.setViewName("errorPage");
+        }
+
+        return mav;
     }
 }

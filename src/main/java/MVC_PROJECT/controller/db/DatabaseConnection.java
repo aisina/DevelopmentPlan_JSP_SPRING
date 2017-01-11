@@ -18,7 +18,7 @@ public class DatabaseConnection {
     public static final String DB_URL = "jdbc:h2:~/DevelopmentPlan";
     public static final String LOGIN = "sa";
     public static final String PASSWORD = "";
-    public static final String H2_DRIVHER = "org.h2.Driver";//org.h2.Driver
+    public static final String H2_DRIVHER = "org.h2.Driver";
 
     private static Connection conn;
 
@@ -27,7 +27,7 @@ public class DatabaseConnection {
             Class.forName(H2_DRIVHER);
             conn = DriverManager.getConnection(DB_URL, LOGIN, PASSWORD);
             LOGGER.info("Connected to DataBase");
-        }catch (ClassNotFoundException e){
+        } catch (ClassNotFoundException e){
             DatabaseConnection.LOGGER.info("Can't get driver: " + e.getMessage());
             conn = null;
         } catch (SQLException e) {

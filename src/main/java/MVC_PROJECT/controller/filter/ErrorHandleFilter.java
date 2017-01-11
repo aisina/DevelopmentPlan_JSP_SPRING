@@ -49,8 +49,6 @@ public class ErrorHandleFilter implements Filter{
         String query = httpRequest.getRequestURI();
 
         if ((session == null || session.getAttribute("user") == null))
-                /*&& !query.matches("/public/.*(.css|.js|.png|.jpg|.jsp)")*/
-        //&& whiteList.contains(query))
         {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/");
 
@@ -58,7 +56,6 @@ public class ErrorHandleFilter implements Filter{
 
             if("admin".equals(session.getAttribute("username"))){
                 if(! adminList.contains(query)){
-                    //без localhost вообще не работает
                     httpResponse.sendRedirect(httpRequest.getContextPath() + "localhost:8080/pages/adminPage.jsp");
                 }
                 else{
@@ -68,7 +65,6 @@ public class ErrorHandleFilter implements Filter{
             }
             else{
                 if(! userList.contains(query)){
-                    //без localhost выдает "Привет, null"
                     httpResponse.sendRedirect(httpRequest.getContextPath() + "localhost:8080/pages/employeePage.jsp");
                 }
                 else{

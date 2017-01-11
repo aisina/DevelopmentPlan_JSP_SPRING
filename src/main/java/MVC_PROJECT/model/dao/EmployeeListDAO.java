@@ -4,9 +4,12 @@ import MVC_PROJECT.controller.GeneratePassword;
 import MVC_PROJECT.model.User;
 import MVC_PROJECT.controller.db.DatabaseConnection;
 import MVC_PROJECT.model.Employee;
+import MVC_PROJECT.model.exceptions.EmployeeDAOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,13 +22,13 @@ import java.util.Map;
 /**
  * Created by innopolis on 27.12.2016.
  */
-public class EmployeeListDAO extends AbstractDAO<Employee, String> {
+@Repository
+public class EmployeeListDAO extends AbstractEmployeeListDAO<Employee, String> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeListDAO.class);
 
     @Override
-    public Map<String, Employee> getAll() {
-
+    public Map<String, Employee> getAll() throws EmployeeDAOException{
         try(Connection connection = DatabaseConnection.getConnection();
             Statement stmt = connection.createStatement();) {
 
@@ -43,13 +46,14 @@ public class EmployeeListDAO extends AbstractDAO<Employee, String> {
             return employeeList;
 
         } catch (SQLException e) {
-            EmployeeListDAO.LOGGER.info(e.getMessage());
-            return null;
+            EmployeeListDAO.LOGGER.warn(e.getMessage());
+            throw new EmployeeDAOException();
         }
     }
 
+
     @Override
-    public List<Employee> getAllList() {
+    public List<Employee> getAllList() throws EmployeeDAOException{
         try(Connection connection = DatabaseConnection.getConnection();
             Statement stmt = connection.createStatement();) {
 
@@ -68,13 +72,13 @@ public class EmployeeListDAO extends AbstractDAO<Employee, String> {
             return employeeList;
 
         } catch (SQLException e) {
-            EmployeeListDAO.LOGGER.info(e.getMessage());
-            return null;
+            EmployeeListDAO.LOGGER.warn(e.getMessage());
+            throw new EmployeeDAOException();
         }
     }
 
     @Override
-    public Employee getEntityById(String key) {
+    public Employee getEntityById(String key) throws EmployeeDAOException{
         Employee employee = new Employee();
         Connection connection = DatabaseConnection.getConnection();
         try {
@@ -87,20 +91,22 @@ public class EmployeeListDAO extends AbstractDAO<Employee, String> {
                 employee.setPosition(rs.getString("position"));
                 employee.setEmail(rs.getString("email"));
             }
+            return employee;
 
         } catch (SQLException e) {
-            EmployeeListDAO.LOGGER.info(e.getMessage());
+            EmployeeListDAO.LOGGER.warn(e.getMessage());
+            throw new EmployeeDAOException();
         }
-        return employee;
+        //return employee;
     }
 
     @Override
-    public boolean update(Employee entity) {
+    public boolean update(Employee entity) throws EmployeeDAOException {
         return false;
     }
 
     @Override
-    public boolean delete(String id) {
+    public boolean delete(String id) throws EmployeeDAOException{
         try(Connection connection = DatabaseConnection.getConnection()) {
 
             Statement stmt = connection.createStatement();
@@ -109,13 +115,13 @@ public class EmployeeListDAO extends AbstractDAO<Employee, String> {
             return true;
 
         } catch (SQLException e) {
-            EmployeeListDAO.LOGGER.info(e.getMessage());
-            return false;
+            EmployeeListDAO.LOGGER.warn(e.getMessage());
+            throw new EmployeeDAOException();
         }
     }
 
     @Override
-    public String getNextNewId(){
+    public String getNextNewId() throws EmployeeDAOException{
         Connection connection = DatabaseConnection.getConnection();
         String ids = "";
         try {
@@ -129,24 +135,19 @@ public class EmployeeListDAO extends AbstractDAO<Employee, String> {
             ids = "" + id;
             return ids;
         } catch (SQLException e) {
-            return "";
+            EmployeeListDAO.LOGGER.warn(e.getMessage());
+            throw new EmployeeDAOException();
         }
 
     }
 
     @Override
-    public String create(Employee employee) {
+    public String create(Employee employee) throws EmployeeDAOException{
         Connection connection = DatabaseConnection.getConnection();
         String ids = "";
         try {
             Statement stmt = connection.createStatement();
-            /*ResultSet rs = stmt.executeQuery("SELECT MAX(ID) maxid FROM EMPLOYEE");
 
-            while (rs.next()) {
-                ids = rs.getString("maxid");
-            }
-            int id = Integer.parseInt(ids) + 1;
-            ids = "" + id;*/
             ids = getNextNewId();
             int id = Integer.parseInt(ids);
 
@@ -162,8 +163,8 @@ public class EmployeeListDAO extends AbstractDAO<Employee, String> {
 
             return ids;
         } catch (SQLException e) {
-            EmployeeListDAO.LOGGER.info(e.getMessage());
-            return "";
+            EmployeeListDAO.LOGGER.warn(e.getMessage());
+            throw  new EmployeeDAOException();
         }
     }
 }

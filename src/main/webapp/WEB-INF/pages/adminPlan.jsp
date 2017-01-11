@@ -15,7 +15,6 @@
 <body>
 
 <p><a href="/userLogout">Выйти</a></p>
-<p><a href="/">На главную</a></p>
 <p><a href="/addPlan">Добавить план</a></p>
 
 <table border="1">

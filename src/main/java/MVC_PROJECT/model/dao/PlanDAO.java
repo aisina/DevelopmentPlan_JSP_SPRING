@@ -2,13 +2,12 @@ package MVC_PROJECT.model.dao;
 
 import MVC_PROJECT.controller.db.DatabaseConnection;
 import MVC_PROJECT.model.Plan;
+import MVC_PROJECT.model.exceptions.PlanDAOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,13 +18,14 @@ import java.util.List;
 /**
  * Created by innopolis on 27.12.2016.
  */
-public class PlanDAO implements myDAO<Plan> {
+@Repository
+public class PlanDAO extends AbstractPlanDAO<Plan> {
 
     private static  final Logger LOGGER = LoggerFactory.getLogger(PlanDAO.class);
     private  List<Plan> plansList = new ArrayList<>();
 
     @Override
-    public List<Plan> getAll() {
+    public List<Plan> getAll() throws PlanDAOException {
         Connection connection = DatabaseConnection.getConnection();
         try {
             Statement stmt = connection.createStatement();
@@ -38,14 +38,16 @@ public class PlanDAO implements myDAO<Plan> {
                 plan.setPlanType(rs.getString("plan_type"));
                 plansList.add(plan);
             }
+            return this.plansList;
 
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
+            throw new PlanDAOException();
         }
-        return this.plansList;
+
     }
 
-    public List<String> getPlanYear() {
+    public List<String> getPlanYear() throws PlanDAOException{
         Connection connection = DatabaseConnection.getConnection();
         List<String> years = new ArrayList<>();
         try {
@@ -55,19 +57,22 @@ public class PlanDAO implements myDAO<Plan> {
                 years.add(rs.getString("year"));
             }
 
+            return years;
+
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
+            throw new PlanDAOException();
         }
-        return years;
-    }
-
-    @Override
-    public void deleteById(int id) {
 
     }
 
     @Override
-    public boolean add(Plan plan) throws UnsupportedEncodingException {
+    public void deleteById(int id) throws PlanDAOException{
+
+    }
+
+    @Override
+    public boolean add(Plan plan) throws UnsupportedEncodingException, PlanDAOException{
         String year = plan.getYear();
         String name = plan.getEmployeeName();
         String position = plan.getEmployeePosition();
@@ -88,13 +93,14 @@ public class PlanDAO implements myDAO<Plan> {
 
         } catch (SQLException e) {
             LOGGER.warn(e.getMessage());
-            return false;
+            throw new PlanDAOException();
         }
 
     }
 
 
-    public List<Plan> getPlanByYear(String year) {
+    @Override
+    public List<Plan> getPlanByYear(String year) throws PlanDAOException{
         Connection connection = DatabaseConnection.getConnection();
         List<Plan> plans = new ArrayList<>();
         try {
@@ -109,14 +115,17 @@ public class PlanDAO implements myDAO<Plan> {
                 plan.setPlanType(rs.getString("plan_type"));
                 plans.add(plan);
             }
+            return plans;
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.warn(e.getMessage());
+            throw new PlanDAOException();
         }
-        return plans;
+
     }
 
-    public List<Plan> getPlanByEmplId(String id) {
+    @Override
+    public List<Plan> getPlanByEmplId(String id) throws PlanDAOException{
         List<Plan> plansList = new ArrayList<>();
         Connection connection = DatabaseConnection.getConnection();
         try {
@@ -130,11 +139,13 @@ public class PlanDAO implements myDAO<Plan> {
                 plan.setPlanType(rs.getString("plan_type"));
                 plansList.add(plan);
             }
+            return plansList;
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.warn(e.getMessage());
+            throw new PlanDAOException();
         }
 
-        return plansList;
+
     }
 }

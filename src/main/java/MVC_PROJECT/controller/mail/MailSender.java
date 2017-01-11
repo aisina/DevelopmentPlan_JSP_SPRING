@@ -1,6 +1,5 @@
 package MVC_PROJECT.controller.mail;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -74,15 +73,5 @@ public class MailSender {
             LOGGER.info(e.getMessage());
         }
     }
-
-    //public static void main(String[] args) {
-        //изначально не было файла log4j.properties
-        //ошибки
-        /*log4j:WARN No appenders could be found for logger (MailSender).
-                log4j:WARN Please initialize the log4j system properly.
-                log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.*/
-
-        //sendMail(getMessage(), getSubject(), "aisinakukmor@mail.ru");
-    //}
 
 }

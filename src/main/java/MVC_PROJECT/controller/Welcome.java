@@ -22,9 +22,6 @@ public class Welcome {
     private static final Logger LOGGER = LoggerFactory.getLogger(Welcome.class);
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    /*public String Login(){
-        return "login";
-    }*/
     public ModelAndView Login(){
         //login - название представления
         //аналогично созданию
@@ -35,12 +32,12 @@ public class Welcome {
 
 
    @RequestMapping(value = "/adminPage", method = RequestMethod.GET)
-    public ModelAndView showAdminPage(HttpSession session, @ModelAttribute User user){
-       System.out.println("Welcome controller, user="+user.getId() + ", " + user.getUsername());
-        //return "adminPage"; - возвращает "Здравсьвуйте, !" без Username
+    public ModelAndView showAdminPage(@ModelAttribute User user){
+       //System.out.println("Welcome controller, user="+user.getId() + ", " + user.getUsername());
+        //return "adminPage"; - возвращает "Здравствуйте, !" без Username
        ModelAndView mav = new ModelAndView();
        mav.setViewName("adminPage");
-       mav.addObject("username", session.getAttribute("username"));
+       mav.addObject("username", user.getUsername());
         return mav;
     }
 }

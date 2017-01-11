@@ -1,37 +1,38 @@
 package MVC_PROJECT.service;
 
 import MVC_PROJECT.model.Plan;
-import MVC_PROJECT.model.dao.PlanDAO;
-import org.springframework.ui.Model;
-import org.springframework.web.servlet.ModelAndView;
+import MVC_PROJECT.model.dao.AbstractPlanDAO;
+import MVC_PROJECT.model.exceptions.PlanDAOException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by innopolis on 09.01.2017.
  */
-public class AdminPlanService {
+@Service
+public class AdminPlanService implements IAdminPlanService{
 
-    private final PlanDAO storeOfPlan = new PlanDAO();
+    private final AbstractPlanDAO<Plan> storeOfPlan;
 
-    public ModelAndView getValues(String year){
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("adminPlanByYear", storeOfPlan.getPlanByYear(year));
-        mav.setViewName("adminPlan");
-
-        return mav;
+    @Autowired
+    public AdminPlanService(AbstractPlanDAO<Plan> storeOfPlan) {
+        this.storeOfPlan = storeOfPlan;
     }
 
-    public ModelAndView addPlan(Plan plan) throws UnsupportedEncodingException {
-        ModelAndView mav = new ModelAndView();
+    @Override
+    public List<Plan> getValues(String year) throws PlanDAOException {
+        return storeOfPlan.getPlanByYear(year);
+    }
+
+    @Override
+    public List<Plan> addPlan(Plan plan) throws UnsupportedEncodingException, PlanDAOException {
         boolean bool = storeOfPlan.add(plan);
-        if(bool){
-            mav.addObject("adminPlanByYear", storeOfPlan.getPlanByYear(plan.getYear()));
-            mav.setViewName("adminPlan");
-        }else{
-            mav.setViewName("adminPlan"); //по сути, здесь должна быть страница ошибки
-        }
-        return mav;
+        if(bool)
+            return storeOfPlan.getPlanByYear(plan.getYear());
+        else return new ArrayList<>();
     }
 }

@@ -1,22 +1,28 @@
 package MVC_PROJECT.service;
 
 import MVC_PROJECT.model.User;
-import MVC_PROJECT.model.dao.UserListDAO;
-import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpSession;
+import MVC_PROJECT.model.dao.AbstractUserListDAO;
+import MVC_PROJECT.model.exceptions.UserDAOException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by innopolis on 05.01.2017.
  */
-public class UserService {
+@Service
+public class UserService implements IUserService{
 
-    UserListDAO userDAO = new UserListDAO();
+    private final AbstractUserListDAO userDAO;
 
-    public ModelAndView changeLogAndPass(User user){
+    @Autowired
+    public UserService(AbstractUserListDAO userDAO) {
+        this.userDAO = userDAO;
+    }
 
-        ModelAndView mav = new ModelAndView();
-        mav.addObject("authorizedUser", user);
+    @Override
+    public boolean changeLogAndPass(User user) throws UserDAOException {
+
+        boolean isChanged = true;
 
         String login = user.getUsername();
         String login2 = user.getConfirmUsername();
@@ -26,65 +32,20 @@ public class UserService {
         System.out.println("UserService; id=" + user.getId() + " new login=" + login + " " + login2 + " new pass=" + password + " " + password2);
 
         if(! login.equals(login2))
-            mav.setViewName("loginChangedError");
+            isChanged = false;
         else{
             if(! password.equals(password2)){
-                //LOGGER.info("Пароли не совпадают");
-                mav.setViewName("loginChangedError");
+                isChanged = false;
             }
             else{
 
                 boolean bool = userDAO.update(user);
                 if(bool){
-                    mav.setViewName("loginChangedSuccess");
                 }else{
-                    mav.setViewName("loginChangedError");
+                    isChanged = false;
                 }
             }
         }
-        return mav;
+        return isChanged;
     }
-
-
-   /* public ModelAndView changeLogAndPassWithSession(HttpSession session, User user){
-
-        System.out.println("Изменение логина и пароля " + (String) session.getAttribute("id") + " " + user.getUsername() + " " + user.getConfirmUsername());
-
-        ModelAndView mav = new ModelAndView();
-        user.setId((String) session.getAttribute("id"));
-        mav.addObject("authorizedUser", user);
-
-        String login = user.getUsername();
-        String login2 = user.getConfirmUsername();
-        String password = user.getPassword();
-        String password2 = user.getConfirmPassword();
-
-        //System.out.println(login + " " + login2 + " " + password + " " + password2);
-
-        //дополнение
-        user.setId((String) session.getAttribute("id"));
-
-        if(! login.equals(login2)) {
-            mav.setViewName("loginChangedError");
-        }
-        else{
-            if(! password.equals(password2)){
-                mav.setViewName("loginChangedError");
-            }
-            else{
-                boolean bool = userDAO.update(user);
-                if(bool){
-                    mav.setViewName("loginChangedSuccess");
-                    if(! "".equals(login))//если изменили логин, а не только пароль
-                        session.setAttribute("username", login);
-                }else{
-                    mav.setViewName("loginChangedError");
-                }
-            }
-        }
-        return mav;
-    }*/
-
-
-
 }

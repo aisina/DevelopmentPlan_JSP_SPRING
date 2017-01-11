@@ -10,14 +10,12 @@
 <html>
 <head>
     <title>Добавление плана</title>
-    <%--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />--%>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 
 <jsp:useBean id="employeeList" class="MVC_PROJECT.model.dao.EmployeeListDAO" scope="page"/>
 <jsp:useBean id="planTypes" class="MVC_PROJECT.model.PlanTypes" scope="page"/>
-
-<p><a href="/">На главную</a></p>
 
 <form:form action="/addPlan" method="POST" modelAttribute="addNewPlan">
     <table>

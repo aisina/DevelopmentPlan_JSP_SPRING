@@ -14,8 +14,6 @@
 </head>
 <body>
 
-<%--<jsp:useBean id="employeeList" class="MVC_PROJECT.model.dao.EmployeeListDAO" scope="page"/>--%>
-
 <p><a href="/adminPage">На главную</a></p>
 <p><a href="${pageContext.servletContext.contextPath}/userLogout">Выход</a></p>
 
@@ -25,8 +23,6 @@
 </form>
 
 <br/>
-
-
 
 <table border="1">
     <tr>

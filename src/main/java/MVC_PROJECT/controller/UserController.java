@@ -1,7 +1,9 @@
 package MVC_PROJECT.controller;
 
 import MVC_PROJECT.model.User;
-import MVC_PROJECT.service.UserService;
+import MVC_PROJECT.model.exceptions.UserDAOException;
+import MVC_PROJECT.service.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +12,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
@@ -21,8 +22,12 @@ import java.io.IOException;
 @SessionAttributes("user")
 public class UserController {
 
-    UserService userService = new UserService();
+    private final IUserService userService;
 
+    @Autowired
+    public UserController(IUserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/showChangePassAndLoginView", method = RequestMethod.GET)
     public ModelAndView showChangePassAndLoginView(){
@@ -33,7 +38,18 @@ public class UserController {
     @RequestMapping(value = "/changePassAndLogin", method = RequestMethod.POST)
     public ModelAndView changePassAndLogin(@ModelAttribute User user){
         //в ModelAttribute User user используются данные из HttpSerssion сессии
-        ModelAndView mav = userService.changeLogAndPass(user);
+        ModelAndView mav = new ModelAndView();
+        boolean bool = false;
+        try {
+            bool = userService.changeLogAndPass(user);
+            if (bool) {
+                mav.setViewName("loginChangedSuccess");
+            } else {
+                mav.setViewName("loginChangedError");
+            }
+        }catch(UserDAOException e){
+            mav.setViewName("errorPage");
+        }
         return mav;
     }
 

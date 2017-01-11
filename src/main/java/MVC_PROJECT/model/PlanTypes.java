@@ -12,8 +12,10 @@ public class PlanTypes {
 
 
     public List<String> getPlantypes(){
+
         //http://1popersonalu.ru/info/vidy-attestacii-personala.html
-        this.plantypes.add("Очередная аттестация");
+        String str = "Очередная аттестация";
+        this.plantypes.add(str);
         this.plantypes.add("Внеочередная");
         this.plantypes.add("Для продвижения по службе");
         this.plantypes.add("Повторная");
