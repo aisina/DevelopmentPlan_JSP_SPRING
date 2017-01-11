@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="UserServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2017-01-11T18:15:53" hostname="DESKTOP-FBGHD84" time="0.0">
+  <properties/>
+  <testcase name="changeLogAndPass_1" classname="UserServiceTest" time="0.0"/>
+  <testcase name="changeLogAndPass_2" classname="UserServiceTest" time="0.0"/>
+  <system-out><![CDATA[UserService; id=-1 new login=username confirmUsername new pass=pass pass
+UserService; id=-1 new login=username username new pass=pass pass2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

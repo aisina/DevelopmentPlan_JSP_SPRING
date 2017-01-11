@@ -1,0 +1,2 @@
+JUserService; id=-1 new login=username confirmUsername new pass=pass pass
+DUserService; id=-1 new login=username username new pass=pass pass2

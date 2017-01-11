@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EmployeeDAOTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-01-11T18:04:01" hostname="DESKTOP-FBGHD84" time="0.801">
+  <properties/>
+  <testcase name="deleteEmployee" classname="EmployeeDAOTest" time="0.801"/>
+  <system-out><![CDATA[2017-01-11 21:04:02,077 [INFO ][Test worker     ][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

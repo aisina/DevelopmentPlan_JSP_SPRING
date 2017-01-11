@@ -1,0 +1,7 @@
+2017-01-10 13:57:56,515 INFO [{}] Welcome
+2017-01-10 13:57:56,515 INFO [{}] Welcome
+2017-01-10 13:57:57,685 INFO [{}] Welcome
+2017-01-10 13:57:57,685 INFO [{}] Welcome
+2017-01-10 13:57:59,022 INFO [{}] Welcome
+2017-01-10 13:57:59,022 INFO [{}] Welcome
+2017-01-10 13:57:59,169 WARN [{}] No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'mvc-dispatcher'

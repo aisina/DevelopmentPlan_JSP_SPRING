@@ -1,0 +1,242 @@
+2017-01-10 14:29:11,226 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.Welcome] - [{}] Welcome
+2017-01-10 14:29:12,494 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.Welcome] - [{}] Welcome
+2017-01-10 14:29:12,915 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.Welcome] - [{}] Welcome
+2017-01-10 14:29:34,798 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.AuthorizationController] - [{}] auth
+2017-01-10 14:31:13,327 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 14:31:14,645 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.Welcome] - [{}] Welcome
+2017-01-10 14:31:15,815 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.Welcome] - [{}] Welcome
+2017-01-10 14:31:16,206 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.Welcome] - [{}] Welcome
+2017-01-10 14:51:27,026 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 14:54:28,760 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 14:54:46,979 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 14:54:54,680 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 14:54:56,276 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 14:55:04,503 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 14:57:01,485 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 14:57:19,576 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:18:58,261 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:19:11,710 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:19:31,329 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:21:19,061 [INFO ][ion(5)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:21:27,176 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:23:30,427 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:23:38,062 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:23:58,838 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:27:10,877 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:27:19,163 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:27:27,738 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:44:18,160 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:49:12,049 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:49:19,623 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:49:28,060 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:49:29,502 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:55:56,797 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:56:30,015 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:56:39,895 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:56:46,806 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:57:17,684 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 15:57:26,644 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:03:34,101 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:03:36,199 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:03:39,645 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:03:48,858 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:03:57,483 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:03:59,861 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:04:01,303 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:04:27,885 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:07:56,300 [INFO ][ion(4)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:08:13,453 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:08:14,847 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:08:16,636 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:12,594 [INFO ][ion(5)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:22,359 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:28,559 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:30,058 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:33,726 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:33,726 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:35,641 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 16:13:37,153 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:37,157 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:37,697 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 16:13:39,607 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:39,607 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:40,301 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 16:13:42,710 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:42,710 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:43,235 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 16:13:47,198 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:47,202 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:47,210 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:47,210 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:47,872 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.mail.MailSender] - [{}] Invalid Addresses
+2017-01-10 16:13:49,472 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:49,480 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:13:51,491 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:14:14,896 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 16:14:34,030 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 17:01:41,011 [INFO ][ion(2)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 17:09:09,545 [INFO ][ion(2)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 17:09:19,758 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 17:24:55,944 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 20:34:00,621 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 20:36:23,781 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 20:45:01,908 [INFO ][ion(5)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 20:45:46,503 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:12:39,700 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:14:13,388 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:17:05,848 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:19:34,373 [INFO ][ion(5)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:24:28,774 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:26:52,368 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:28:47,218 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:28:59,335 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:29:00,781 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:32:32,440 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:33:25,496 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:33:37,201 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:03,859 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:05,992 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:08,155 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:08,163 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:11,192 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:11,193 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:12,718 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 21:34:15,320 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:15,323 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:15,868 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 21:34:19,713 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:19,715 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:20,414 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 21:34:26,695 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:26,697 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:27,239 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 21:34:30,291 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:30,296 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:33,407 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:33,409 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:34,056 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 21:34:36,618 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:36,619 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:37,320 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-10 21:34:44,007 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:46,272 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:47,051 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:48,124 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:34:50,264 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:35:52,048 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:36:33,309 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-10 21:37:43,027 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:39:27,286 [INFO ][ion(5)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:42:22,706 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:43:40,670 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:46:29,160 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:47:22,054 [INFO ][ion(5)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:48:03,063 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:48:04,989 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:48:07,836 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:48:07,836 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:48:09,540 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-11 15:48:12,200 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:48:12,200 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:48:12,873 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.mail.MailSender] - [{}] Illegal address
+2017-01-11 15:54:02,299 [INFO ][ion(5)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:29,370 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:30,798 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:41,934 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:41,934 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:41,942 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:41,946 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:43,325 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.mail.MailSender] - [{}] Invalid Addresses
+2017-01-11 15:54:45,404 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:45,415 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:47,425 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:50,690 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:51,814 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:54:52,847 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:55:05,931 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:55:07,029 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:55:11,950 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:55:21,576 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:56:33,190 [INFO ][ion(5)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:56:41,482 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:56:42,702 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:56:45,362 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:56:46,986 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:56:50,081 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:56:55,410 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:56:55,418 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:57:00,478 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:57:07,862 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:57:09,175 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 15:57:10,968 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:02:52,471 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:03:08,763 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:03:10,378 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:03:12,232 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:03:49,045 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:03:49,049 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:03:53,044 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:04:05,105 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:04:08,727 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:04:09,957 [INFO ][-nio-8080-exec-2][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:04:20,978 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:07:59,826 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:08:10,075 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:08:40,560 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:09:28,010 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 16:09:37,228 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 17:38:32,100 [INFO ][ion(2)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 17:38:40,394 [INFO ][ion(2)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 17:40:41,124 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:15:00,027 [INFO ][ion(2)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:15:01,150 [INFO ][ion(2)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:15:21,152 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:15:22,650 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:15:24,824 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:19:54,254 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:19:55,551 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:20:48,647 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:20:50,174 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:20:54,645 [INFO ][-nio-8080-exec-9][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:22:38,576 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:22:39,831 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:28:59,160 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:29:00,970 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:29:02,684 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:30:34,097 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:30:35,324 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:31:14,847 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:31:16,432 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:31:18,523 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:33:23,740 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:33:25,014 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:33:58,599 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:34:00,199 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 19:34:01,721 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:02:51,555 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:02:52,785 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:08,903 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:10,370 [INFO ][-nio-8080-exec-8][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:15,777 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:15,781 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:15,789 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:15,789 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:17,708 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.mail.MailSender] - [{}] Invalid Addresses
+2017-01-11 20:03:19,310 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:19,318 [INFO ][-nio-8080-exec-1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:21,186 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:22,292 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:03:24,085 [INFO ][-nio-8080-exec-5][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:04:01,118 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:04:01,122 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:04:12,890 [INFO ][nio-8080-exec-10][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:04:25,248 [INFO ][-nio-8080-exec-3][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 20:04:26,801 [INFO ][-nio-8080-exec-4][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 21:04:02,077 [INFO ][Test worker     ][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 21:17:25,359 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 21:17:26,640 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 21:17:37,992 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 21:17:39,581 [INFO ][-nio-8080-exec-7][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 21:17:53,838 [INFO ][-nio-8080-exec-6][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 21:21:08,691 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
+2017-01-11 21:21:09,872 [INFO ][ion(3)-127.0.0.1][MVC_PROJECT.controller.db.DatabaseConnection] - [{}] Connected to DataBase
