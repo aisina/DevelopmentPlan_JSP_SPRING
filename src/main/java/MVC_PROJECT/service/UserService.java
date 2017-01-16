@@ -4,7 +4,10 @@ import MVC_PROJECT.model.User;
 import MVC_PROJECT.model.dao.AbstractUserListDAO;
 import MVC_PROJECT.model.exceptions.UserDAOException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by innopolis on 05.01.2017.
@@ -20,7 +23,8 @@ public class UserService implements IUserService{
     }
 
     @Override
-    public boolean changeLogAndPass(User user) throws UserDAOException {
+    @Secured("ROLE_USER")
+    public boolean changeLogAndPass(User user, HttpSession session) throws UserDAOException {
 
         boolean isChanged = true;
 
@@ -28,8 +32,6 @@ public class UserService implements IUserService{
         String login2 = user.getConfirmUsername();
         String password = user.getPassword();
         String password2 = user.getConfirmPassword();
-
-        System.out.println("UserService; id=" + user.getId() + " new login=" + login + " " + login2 + " new pass=" + password + " " + password2);
 
         if(! login.equals(login2))
             isChanged = false;
@@ -39,7 +41,7 @@ public class UserService implements IUserService{
             }
             else{
 
-                boolean bool = userDAO.update(user);
+                boolean bool = userDAO.update(user, session);
                 if(bool){
                 }else{
                     isChanged = false;

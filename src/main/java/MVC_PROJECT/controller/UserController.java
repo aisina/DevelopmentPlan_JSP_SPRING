@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
@@ -36,12 +37,15 @@ public class UserController {
 
 
     @RequestMapping(value = "/changePassAndLogin", method = RequestMethod.POST)
-    public ModelAndView changePassAndLogin(@ModelAttribute User user){
+    public ModelAndView changePassAndLogin(@ModelAttribute User user, HttpSession session){
         //в ModelAttribute User user используются данные из HttpSerssion сессии
         ModelAndView mav = new ModelAndView();
+
+        user.setId((String) session.getAttribute("id"));
+
         boolean bool = false;
         try {
-            bool = userService.changeLogAndPass(user);
+            bool = userService.changeLogAndPass(user, session);
             if (bool) {
                 mav.setViewName("loginChangedSuccess");
             } else {

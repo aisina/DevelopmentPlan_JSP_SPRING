@@ -5,6 +5,7 @@ import MVC_PROJECT.controller.mail.MailSender;
 import MVC_PROJECT.model.exceptions.EmployeeDAOException;
 import MVC_PROJECT.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,10 @@ import javax.servlet.http.HttpServletRequest;
 public class EmployeeController {
 
     private final IEmployeeService emplService;
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder) {this.passwordEncoder = passwordEncoder;}
 
     @Autowired
     public EmployeeController(IEmployeeService emplService) {
@@ -39,6 +44,7 @@ public class EmployeeController {
 
         ModelAndView mav = new ModelAndView();
         boolean bool = false;
+
         try{
             bool = emplService.addEmployee(myEmployee);
 
@@ -48,12 +54,13 @@ public class EmployeeController {
                     mav.setViewName("employeeList");
 
                     String ids = emplService.getNextNewId();
+                    Integer id = Integer.valueOf(ids) -1;
 
                     String message = "Здравствуйте, " + myEmployee.getName() + "! \n";
                     message += "Вам предоставлен доступ к системе профессионального развития сотрудников компании. \n";
                     message += "Данные для входа в личный кабинет:\n";
-                    message += "Логин: " + ids + "\n";
-                    message += "Пароль: " + ids + "\n";
+                    message += "Логин: " + id + "\n";
+                    message += "Пароль: " + id + "\n";
                     message += "Вы можете изменить данные в личном кабинете.";
                     String subject = "Вам предоставлен доступ к системе профразвития сотрудников.";
                     MailSender.sendMail(message, subject, myEmployee.getEmail());

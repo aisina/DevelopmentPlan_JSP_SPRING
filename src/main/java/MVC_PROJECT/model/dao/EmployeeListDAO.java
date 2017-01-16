@@ -1,12 +1,13 @@
 package MVC_PROJECT.model.dao;
 
-import MVC_PROJECT.controller.GeneratePassword;
 import MVC_PROJECT.model.User;
 import MVC_PROJECT.controller.db.DatabaseConnection;
 import MVC_PROJECT.model.Employee;
 import MVC_PROJECT.model.exceptions.EmployeeDAOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import java.io.UnsupportedEncodingException;
@@ -26,6 +27,13 @@ import java.util.Map;
 public class EmployeeListDAO extends AbstractEmployeeListDAO<Employee, String> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeListDAO.class);
+
+    PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder){
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public Map<String, Employee> getAll() throws EmployeeDAOException{
@@ -110,6 +118,8 @@ public class EmployeeListDAO extends AbstractEmployeeListDAO<Employee, String> {
         try(Connection connection = DatabaseConnection.getConnection()) {
 
             Statement stmt = connection.createStatement();
+
+            stmt.executeUpdate("DELETE FROM USER_ROLES WHERE username = (select login from users where id='" + id + "')");
             stmt.executeUpdate("DELETE FROM EMPLOYEE WHERE ID=" + id);
             stmt.executeUpdate("DELETE FROM USERS WHERE ID=" + id);
             return true;
@@ -131,8 +141,10 @@ public class EmployeeListDAO extends AbstractEmployeeListDAO<Employee, String> {
             while (rs.next()) {
                 ids = rs.getString("maxid");
             }
+
+            System.out.println("maxid="+ids);
             int id = Integer.parseInt(ids) + 1;
-            ids = "" + id;
+            ids = String.valueOf(id);
             return ids;
         } catch (SQLException e) {
             EmployeeListDAO.LOGGER.warn(e.getMessage());
@@ -149,17 +161,20 @@ public class EmployeeListDAO extends AbstractEmployeeListDAO<Employee, String> {
             Statement stmt = connection.createStatement();
 
             ids = getNextNewId();
+            System.out.println("ids="+ids);
             int id = Integer.parseInt(ids);
 
             String sql = "INSERT INTO EMPLOYEE VALUES('" + id + "', '" + employee.getName() + "', '" + employee.getDepartment() + "', '" + employee.getPosition() + "', '" + employee.getEmail() + "')";
 
             stmt.executeUpdate(sql);
 
-            String salt = "testsaltconstant";
+            String salt = "";//"testsaltconstant";
             User user = new User();
-            user.setSalt(salt);
-            String pass = GeneratePassword.generatePass(ids, user);
+            //user.setSalt(salt);
+            //String pass = GeneratePassword.generatePass(ids, user);
+            String pass = passwordEncoder.encode(ids);
             stmt.executeUpdate("insert into users values('" + id + "', '" + id + "', '" + pass + "', '" + salt + "')");
+            stmt.executeUpdate("insert into user_roles values('" + id + "', 'ROLE_USER')");
 
             return ids;
         } catch (SQLException e) {

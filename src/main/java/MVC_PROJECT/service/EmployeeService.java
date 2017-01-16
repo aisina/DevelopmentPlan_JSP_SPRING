@@ -4,6 +4,8 @@ import MVC_PROJECT.model.Employee;
 import MVC_PROJECT.model.dao.AbstractEmployeeListDAO;
 import MVC_PROJECT.model.exceptions.EmployeeDAOException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +25,7 @@ public class EmployeeService implements IEmployeeService{
     }
 
     @Override
+    @Secured("ROLE_ADMIN")
     public boolean addEmployee(Employee employee) throws EmployeeDAOException {
         boolean bool = true;
         //случай, когда поля для ввода пусты
@@ -39,11 +42,13 @@ public class EmployeeService implements IEmployeeService{
     }
 
     @Override
+    @Secured("ROLE_ADMIN")
     public String getNextNewId() throws EmployeeDAOException {
         return emplDAO.getNextNewId();
     }
 
     @Override
+    @Secured("ROLE_ADMIN")
     public List<Employee> deleteEmployee(String id) throws EmployeeDAOException {
         boolean bool = emplDAO.delete(id);
         if(bool){
@@ -54,6 +59,7 @@ public class EmployeeService implements IEmployeeService{
     }
 
     @Override
+    @Secured("ROLE_ADMIN")
     public List<Employee> showEmplList() throws EmployeeDAOException {
         return emplDAO.getAllList();
     }

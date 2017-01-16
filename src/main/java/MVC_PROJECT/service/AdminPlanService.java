@@ -4,6 +4,7 @@ import MVC_PROJECT.model.Plan;
 import MVC_PROJECT.model.dao.AbstractPlanDAO;
 import MVC_PROJECT.model.exceptions.PlanDAOException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
@@ -24,11 +25,13 @@ public class AdminPlanService implements IAdminPlanService{
     }
 
     @Override
+    @Secured("ROLE_ADMIN")
     public List<Plan> getValues(String year) throws PlanDAOException {
         return storeOfPlan.getPlanByYear(year);
     }
 
     @Override
+    @Secured("ROLE_ADMIN")
     public List<Plan> addPlan(Plan plan) throws UnsupportedEncodingException, PlanDAOException {
         boolean bool = storeOfPlan.add(plan);
         if(bool)

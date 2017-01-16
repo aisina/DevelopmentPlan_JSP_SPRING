@@ -1,13 +1,15 @@
 package MVC_PROJECT.model.dao;
 
-import MVC_PROJECT.controller.GeneratePassword;
 import MVC_PROJECT.model.User;
 import MVC_PROJECT.controller.db.DatabaseConnection;
 import MVC_PROJECT.model.exceptions.UserDAOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,6 +25,14 @@ import java.util.Map;
 public class UserListDAO extends AbstractUserListDAO<User,String> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserListDAO.class);
+
+    PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public void setPasswordEncoder(PasswordEncoder passwordEncoder){
+        this.passwordEncoder = passwordEncoder;
+    }
+
 
     @Override
     public Map<String, User> getAll() throws UserDAOException {
@@ -58,33 +68,44 @@ public class UserListDAO extends AbstractUserListDAO<User,String> {
     }
 
     @Override
-    public boolean update(User user) throws UserDAOException{
+    public boolean update(User user, HttpSession session) throws UserDAOException{
         Connection connection = DatabaseConnection.getConnection();
         try {
             String id = user.getId();
             Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("select salt from users where id='" + id + "'");
-            String salt= "";
+            ResultSet rs = stmt.executeQuery("select login from users where id='" + id + "'");
+            String old_username= "";
             while(rs.next()){
-                salt = rs.getString("salt");
+                old_username = rs.getString("login");
             }
 
-            user.setSalt(salt);
+            //user.setSalt(salt);
             String sqlQuery = "update users set ";
 
             if("".equals(user.getUsername()) && !"".equals(user.getPassword())){
-                sqlQuery += "password='" + GeneratePassword.generatePass(user.getPassword(), user) + "' ";
+                //sqlQuery += "password='" + GeneratePassword.generatePass(user.getPassword(), user) + "' ";
+                sqlQuery += "password='" + passwordEncoder.encode(user.getPassword()) + "' ";
             }
             if(!"".equals(user.getUsername()) && "".equals(user.getPassword())){
                 sqlQuery += "login='" + user.getUsername() + "' ";
             }
             if(!"".equals(user.getUsername()) && !"".equals(user.getPassword())){
-                sqlQuery += "password='" + GeneratePassword.generatePass(user.getPassword(), user) + "', login = '" + user.getUsername() +"' ";
+                sqlQuery += "password='" + passwordEncoder.encode(user.getPassword()) + "', login = '" + user.getUsername() +"' ";
             }
 
             sqlQuery += "where id="+id;
 
             stmt.executeUpdate(sqlQuery);
+
+            if(! "".equals(user.getUsername()) ){
+                stmt.executeUpdate("delete from user_roles where username='" + old_username + "'");
+                stmt.executeUpdate("insert into user_roles values('" + user.getUsername() + "', 'ROLE_USER')");
+                session.setAttribute("username", user.getUsername());
+                session.setAttribute("user", user);
+
+
+            }
+
             return true;
 
         } catch (SQLException e) {
