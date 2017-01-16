@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<p><a href="/adminPage">На главную</a></p>
+<p><a href="/">На главную</a></p>
 <p><a href="${pageContext.servletContext.contextPath}/userLogout">Выход</a></p>
 
 

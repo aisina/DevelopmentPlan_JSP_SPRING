@@ -16,6 +16,4 @@
             base-package="MVC_PROJECT">
     </context:component-scan>
 
-
-
 </beans>
