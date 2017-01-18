@@ -1,8 +1,8 @@
 package MVC_PROJECT.controller;
 
 import MVC_PROJECT.model.User;
-import MVC_PROJECT.model.dao.AbstractUserListDAO;
-import MVC_PROJECT.model.dao.UserListDAO;
+import MVC_PROJECT.model.dao_hibernate.AbstractUserListDAO;
+import MVC_PROJECT.model.dao_hibernate.UserListDAO_H;
 import MVC_PROJECT.model.exceptions.UserDAOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.ServletException;
@@ -28,7 +27,8 @@ import java.util.Map;
 public class AuthorizationController {
 
     public UserValidate userValidate = new UserValidate();
-    public static AbstractUserListDAO userDAO = new UserListDAO();
+    //public static AbstractUserListDAO userDAO = new UserListDAO();
+    public static AbstractUserListDAO userDAO = new UserListDAO_H();
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthorizationController.class);
 
     private static Map<String, User> users;
@@ -37,7 +37,6 @@ public class AuthorizationController {
     public Map<String, User> getAll() throws UserDAOException {
         return this.users = userDAO.getAll();
     }
-
 
     @RequestMapping(value = {"/userLogon"}, method = RequestMethod.GET)
     public String Log() {

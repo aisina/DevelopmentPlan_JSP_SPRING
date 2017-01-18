@@ -1,7 +1,7 @@
 package MVC_PROJECT.service;
 
 import MVC_PROJECT.model.Employee;
-import MVC_PROJECT.model.dao.AbstractEmployeeListDAO;
+import MVC_PROJECT.model.dao_hibernate.AbstractEmployeeListDAO;
 import MVC_PROJECT.model.exceptions.EmployeeDAOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -17,6 +17,7 @@ import java.util.List;
 @Service
 public class EmployeeService implements IEmployeeService{
 
+    //private final AbstractEmployeeListDAO emplDAO;
     private final AbstractEmployeeListDAO emplDAO;
 
     @Autowired

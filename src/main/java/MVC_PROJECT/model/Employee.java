@@ -66,9 +66,9 @@ public class Employee {
         this.email = email;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.println(Employee.class.getProtectionDomain().getCodeSource());
         SecurityManager security = System.getSecurityManager();
         System.out.println(security);
-    }
+    }*/
 }

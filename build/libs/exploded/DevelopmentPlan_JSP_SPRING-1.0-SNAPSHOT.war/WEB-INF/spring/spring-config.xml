@@ -8,18 +8,9 @@
                  http://www.springframework.org/schema/security
                  http://www.springframework.org/schema/security/spring-security-4.1.xsd">
 
-<!--<beans:beans xmlns="http://www.springframework.org/schema/security"-->
-         <!--xmlns:beans="http://www.springframework.org/schema/beans"-->
-         <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-         <!--xsi:schemaLocation="http://www.springframework.org/schema/beans-->
-         <!--http://www.springframework.org/schema/beans/spring-beans.xsd-->
-        <!--http://www.springframework.org/schema/security-->
-        <!--http://www.springframework.org/schema/security/spring-security.xsd">-->
-
-
 <!--<http access-denied-page="/loginError.jsp">-->
-    <http use-expressions="true" auto-config="true"> <!-- if html contains nothing, add "auto-config='true'"-->
-        <!--use-expressions="false" в версии 4.1-->
+
+    <http use-expressions="true" auto-config="true">
         <csrf disabled="true"/>
 
 
@@ -58,7 +49,7 @@
 
 </http>
 
-    <!--нет spring-database.xml-->
+<!--нет spring-database.xml-->
 <!--<authentication-manager>-->
     <!--<authentication-provider>-->
         <!--<user-service>-->

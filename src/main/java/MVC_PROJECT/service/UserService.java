@@ -1,7 +1,7 @@
 package MVC_PROJECT.service;
 
 import MVC_PROJECT.model.User;
-import MVC_PROJECT.model.dao.AbstractUserListDAO;
+import MVC_PROJECT.model.dao_hibernate.AbstractUserListDAO;
 import MVC_PROJECT.model.exceptions.UserDAOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 @Service
 public class UserService implements IUserService{
 
+    //private final AbstractUserListDAO userDAO;
     private final AbstractUserListDAO userDAO;
 
     @Autowired

@@ -1,7 +1,7 @@
 package MVC_PROJECT.service;
 
 import MVC_PROJECT.model.Plan;
-import MVC_PROJECT.model.dao.AbstractPlanDAO;
+import MVC_PROJECT.model.dao_hibernate.AbstractPlanDAO;
 import MVC_PROJECT.model.exceptions.PlanDAOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -17,6 +17,7 @@ import java.util.List;
 @Service
 public class AdminPlanService implements IAdminPlanService{
 
+    //private final AbstractPlanDAO<Plan> storeOfPlan;
     private final AbstractPlanDAO<Plan> storeOfPlan;
 
     @Autowired

@@ -36,7 +36,16 @@ dependencies {
     // https://mvnrepository.com/artifact/org.springframework/spring-jdbc
     compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.5.RELEASE'
 
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.6.Final'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+    //compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '3.3.2.GA'
 
+
+
+    //compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.1.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '4.2.1.Final'
+    //compile group: 'javax.persistence', name: 'persistence-api', version: '1.0'
 
 
 }

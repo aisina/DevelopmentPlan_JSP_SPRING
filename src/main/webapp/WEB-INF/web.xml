@@ -25,6 +25,7 @@
             /WEB-INF/spring/spring-config.xml
             /WEB-INF/spring/spring-database.xml
             classpath:appContext.xml
+            /WEB-INF/hibernate.cfg.xml
         </param-value>
     </context-param>
 
